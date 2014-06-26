@@ -1,0 +1,378 @@
+#newTodoForm input{
+	height: 40px;
+	margin-top: 1em;
+}
+.user_pic{
+	height: 30px;
+	border-radius: 50%;
+	margin-right: 5px;
+}
+.user_pic_small{
+	height: 20px;
+	border-radius: 50%;
+	margin-right: 5px;
+}
+ul#todo_list{
+	list-style: none;
+}
+ul#todo_list li{
+	position: relative;
+	margin-bottom: 0px;
+}
+ul#todo_list li .remove{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	padding: 10px;
+	outline: 0;
+}
+ul#todo_list li .assign{
+	position: absolute;
+	top: 5px;
+	right: 38px;
+}
+ul#todo_list li .assign .caret{
+	margin-top: 10px;
+}
+.assign button.btn.btn-small.dropdown-toggle {
+	background-color: whitesmoke;
+}
+#topic_view .assign ul {
+	margin: -10px 0px;
+}
+#topic_view .assign ul li a{
+	padding-left: 6px;
+}
+ul#todo_list li a {
+	padding-left: 110px;
+	padding-right: 25px;
+	color: #555;
+	font-size: 16px;
+	border-bottom: 0px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+ul#todo_list li:last-child a {
+	border-bottom: 1px solid #ddd;
+}
+
+ul#todo_list li input[type=checkbox] {
+	position: absolute;
+	left: 15px;
+	top: 10px;
+}
+
+#todo_list li a.done{
+	text-decoration:line-through;
+	color: grey;
+}
+/* SQUARED TWO */
+.squaredTwo input[type=checkbox] {
+	visibility: hidden;
+}
+.squaredTwo {
+	width: 28px;
+	height: 28px;
+	background: #fcfff4;
+
+	background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	background: -moz-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	background: -o-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	background: -ms-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 );
+	margin: 20px auto;
+
+	-webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+	box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+	position: relative;
+}
+
+.squaredTwo label {
+	cursor: pointer;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 4px;
+	top: 4px;
+
+	-webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
+	-moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
+	box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
+
+	background: -webkit-linear-gradient(top, #222 0%, #45484d 100%);
+	background: -moz-linear-gradient(top, #222 0%, #45484d 100%);
+	background: -o-linear-gradient(top, #222 0%, #45484d 100%);
+	background: -ms-linear-gradient(top, #222 0%, #45484d 100%);
+	background: linear-gradient(top, #222 0%, #45484d 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222', endColorstr='#45484d',GradientType=0 );
+}
+
+.squaredTwo label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 9px;
+	height: 5px;
+	background: transparent;
+	top: 4px;
+	left: 4px;
+	border: 3px solid #fcfff4;
+	border-top: none;
+	border-right: none;
+
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.squaredTwo label:hover::after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+	filter: alpha(opacity=30);
+	opacity: 0.3;
+}
+
+.squaredTwo input[type=checkbox]:checked + label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+}
+
+/* checklists */
+.tasks-lists {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: -11px;
+  padding: 10px 4px;
+  width: 19px;
+  height: 3px;
+  font: 0/0 serif;
+  text-shadow: none;
+  color: transparent;
+}
+.tasks-lists:before {
+  content: '';
+  display: block;
+  height: 3px;
+  background: #8c959d;
+  border-radius: 1px;
+  -webkit-box-shadow: 0 6px #8c959d, 0 -6px #8c959d;
+  box-shadow: 0 6px #8c959d, 0 -6px #8c959d;
+}
+
+.tasks-list-item {
+  display: block;
+  line-height: 24px;
+  padding: 12px 15px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.tasks-list-item + .tasks-list-item {
+  border-top: 1px solid #f0f2f3;
+}
+
+.tasks-list-cb {
+  display: none;
+}
+
+.tasks-list-mark {
+	width: 20px;
+	height: 20px;
+	border: 2px solid #8a9a9b;
+	border-radius: 12px;
+	display: block;
+	margin: 0px;
+	position: absolute;
+	top: 12px;
+}
+.tasks-list-mark:before {
+	content: '';
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -5px 0 0 -6px;
+	height: 8px;
+	width: 12px;
+	border: solid #1fa086;
+	border-width: 0 0 4px 4px;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.tasks-list-cb:checked ~ .tasks-list-mark {
+  border-color: #1fa086;
+}
+.tasks-list-cb:checked ~ .tasks-list-mark:before {
+  display: block;
+}
+.tasks-list-images{
+	margin-left: 54px;
+	margin-top: 0px;
+	margin-right: 85px;
+	padding: 5px 0px;
+	overflow: hidden;
+	cursor: auto;
+}
+
+.tasks-list-images p{
+	float: left;
+	margin-bottom: 10px!important;
+	margin-right: 10px!important;
+	background-size: cover;
+	background-color: #fff;
+	text-align: center;
+	position: relative;
+	min-width: 100px;
+	cursor: pointer;
+	background: #eee;
+	border: 1px solid #eee;
+	border-radius: 2px;
+}
+
+.tasks-list-images p img{
+	height: 140px;
+	max-width: 100%;
+}
+
+.tasks-list-images p span.actions {
+	height: 60px;
+	margin-top: 40px;
+	display: none;
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	margin-top: 0px;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	transform: translateY(-50%);
+	width: 100%;
+}
+
+.tasks-list-images p span.actions a{
+	width: 50%;
+	float: left;
+	padding: 0px!important;
+	display: block;
+	height: 100%;
+	vertical-align: middle;
+	line-height: 60px;
+	border-bottom: none!important;
+}
+
+.tasks-list-images p:hover span.actions{
+	display: block;
+	background: #000;
+	opacity: 0.75;
+}
+
+.tasks-list-images p:hover span.actions a:hover{
+	background: #eee;
+	text-decoration: none;
+}
+
+.tasks-list-desc {
+  font-weight: bold;
+  color: #8a9a9b;
+  display: block;
+  margin-left: 54px;
+  margin-top: 0px;
+  margin-right: 92px;
+}
+/* for add image button after the todo*/
+.task .tasks-list-desc .add-img{
+	display: none;
+	margin-left: 5px;
+	vertical-align: middle;
+	border-bottom: none!important;
+	overflow: hidden;
+}
+
+.task .tasks-list-desc .add-img:hover{
+	cursor: pointer;
+	color: #1fa086;
+}
+
+.task .tasks-list-desc .add-img input{
+	z-index: 10;
+}
+.task .tasks-list-desc .add-img:hover,.task .tasks-list-desc .add-img input[type='file']:hover{
+	cursor: pointer;
+}
+
+.task:hover .tasks-list-desc .add-img{display: inline-block;position: absolute!important;}
+
+.tasks-list-cb:checked ~ .tasks-list-desc {
+  color: #bbb;
+  text-decoration: line-through;
+}
+
+.task:last-child .tasks-list-item {
+	border-bottom: 0px;
+}
+
+.assign button.btn.btn-small.dropdown-toggle {
+	background-color: transparent;
+	outline: 0;
+}
+
+.tasks-list-item .btn .user_pic_small {
+	height: 30px;
+	border-radius: 1px solid #aaa;
+}
+
+.tasks-list-cb:checked ~ .assign {
+	opacity: 0.5;
+}
+
+.assign .btn .icon-angle-down {
+	font-size: 15px;
+	color: #999
+}
+
+.assign .btn:hover .icon-angle-down {
+	color: #777
+}
+
+ul#todo_list .dropdown-menu li a {
+	padding: 2px 10px;
+	border-bottom: 0px;
+	font-size: 13px;
+}
+
+#topic_view #newTodoForm input[type=text] {
+	font-size: 17px;
+	padding: 10px 10px;
+}
+
+#topic_view #newTodoForm input[type=text]:focus {
+	border-color: #1fa086;
+}
+
+.tasks-list-cb:checked ~ .assign ul {
+	display: none;
+}
+
+.todo_status_tab{margin: 10px 0px!important;}
+.todo_status_tab li{
+	width: 50%;
+	display: block;
+	float: left;
+	text-align: center;
+	padding: 15px 0px;
+	ont-size: 17px;
+	color: #666;
+}
+.todo_status_tab li.active{border-bottom:4px solid #1fa086;font-weight: bold;}
