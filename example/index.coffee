@@ -1,6 +1,6 @@
 define([], ()->
 	{
-		showName: 'New1'
+		showName: 'Eg'
 		icon: "icon-star"
 		models: [
 			{name: "Component", fields: ["name", "text"]}

@@ -3,7 +3,7 @@
 # the component's floder's name
 
 loadedComponents = [
-	#"new1"
+	"example"
 	"todolist"
 ]
 # 
