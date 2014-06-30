@@ -1,14 +1,12 @@
 # configure new component here
 # component name defined here must be the same as 
 # the component's floder's name
-
-loadedComponents = [
-	"example"
-	"todolist"
-]
+pluginSetting = {}
+#enterprise.get_setting("plugins")
+loadedComponents = Object.keys(pluginSetting)
 # 
 components = loadedComponents.map (component) -> 
-	"forum/components/#{component}/index"
+	pluginSetting[component].repo
 
 define('forum/components/components_loader', components, () ->
 	# do something
