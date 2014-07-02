@@ -1,38 +1,37 @@
-<link href="forum/plugins/forum/components/todolist/todolist.css" rel="stylesheet" />
 <ul class="todo_status_tab">
-	<li ng-class="{active:componentScope['todolist'].show_completed_todo==1}" ng-click="componentScope['todolist'].change_todo_display(1)">Incompleted</li>
-	<li ng-class="{active:componentScope['todolist'].show_completed_todo==2}" ng-click="componentScope['todolist'].change_todo_display(2)">Completed</li>
+	<li ng-class="{active:show_completed_todo==1}" ng-click="change_todo_display(1)">Incompleted</li>
+	<li ng-class="{active:show_completed_todo==2}" ng-click="change_todo_display(2)">Completed</li>
 </ul>
 <ul id="todo_list" class="nav nav-tabs nav-stacked">
-	<li ng-repeat="todo in componentScope['todolist'].todoList|orderBy:componentScope.todolist.todoOrder:componentScope.todolist.reverseOrder" class="task" ng-show="componentScope['todolist'].will_show_todo(todo)">
+	<li ng-repeat="todo in todoList|orderBy:componentScope.todolist.todoOrder:componentScope.todolist.reverseOrder" class="task" ng-show="will_show_todo(todo)">
 		<div class="tasks-list-item">
-		    <input type="checkbox" name="task_1" value="1" class="tasks-list-cb" ng-model="todo.status" ng-change="componentScope['todolist'].changeStatus(todo)">
-		    <span class="tasks-list-mark" ng-click="componentScope['todolist'].toggle(todo)"></span>
-		    <span class="tasks-list-desc" en-edit-in-place ng-model="todo.content" ng-change="content_changed($index)" enable-edit="todo.status" ng-click="componentScope['todolist'].editing_todo=$index">{{todo.content}}<b class="add-img" title="Add Image or File (or drag&amp;drop to comment box)" style=" padding: 0px;position: relative;" ><i class="icon icon-picture"></i><input type="file" en-file en-model="todo.new_image" ng-click="componentScope['todolist'].editing_todo=$index" style=" opacity: 0; width: 17px; height: 17px; position: absolute; left: 0px; top: 4px; " class="image" multiple=""></b></span>
-		    <button confirm on-confirm="componentScope['todolist'].delTodo(todo)" class="close remove pull-right">×</button>
+		    <input type="checkbox" name="task_1" value="1" class="tasks-list-cb" ng-model="todo.status" ng-change="changeStatus(todo)">
+		    <span class="tasks-list-mark" ng-click="toggle(todo)"></span>
+		    <span class="tasks-list-desc" en-edit-in-place ng-model="todo.content" ng-change="content_changed($index)" enable-edit="todo.status" ng-click="editing_todo=$index">{{todo.content}}<b class="add-img" title="Add Image or File (or drag&amp;drop to comment box)" style=" padding: 0px;position: relative;" ><i class="icon icon-picture"></i><input type="file" en-file en-model="todo.new_image" ng-click="editing_todo=$index" style=" opacity: 0; width: 17px; height: 17px; position: absolute; left: 0px; top: 4px; " class="image" multiple=""></b></span>
+		    <button confirm on-confirm="delTodo(todo)" class="close remove pull-right">×</button>
 
 			<div class="btn-group assign">
 				<button class="btn btn-small dropdown-toggle" data-toggle="dropdown">
-					<img alt="{{componentScope['todolist'].user_model.findByAttribute('pid', todo.userid).name}}" class="user_pic_small" ng-src="{{get_user_pic(todo.userid)}}">
+					<img alt="{{user_model.findByAttribute('pid', todo.userid).name}}" class="user_pic_small" ng-src="{{get_user_pic(todo.userid)}}">
 					<i class="icon-angle-down"></i>
 				</button>
 				<ul class="dropdown-menu">
-					<li ng-repeat="user in componentScope['todolist'].users">
-						<a ng-click="componentScope['todolist'].assign(todo, user)">
+					<li ng-repeat="user in users">
+						<a ng-click="assign(todo, user)">
 							<img alt="{{user.name}}" class="user_pic_small" ng-src="{{get_user_pic(user.pid)}}">
 							{{user.name}}
 						</a>
 					</li>
-					<li><a ng-click="componentScope['todolist'].cancelAssign(todo)" style="text-align:center;">Cancel</a></li>
+					<li><a ng-click="cancelAssign(todo)" style="text-align:center;">Cancel</a></li>
 				</ul>
 			</div>
 			<p style="color:#aaa;margin:10px 0px 10px 52px;font-size:13px" ng-if="todo.status&&todo.completed_at">{{'completed at '+get_time_from_now(todo.completed_at)+' ago'}}</p>
 			<div ng-if="todo.images" class="tasks-list-images" ng-cloak>
 				<p ng-repeat="image in todo.images track by $index">
-					<img ng-src="{{componentScope['todolist'].get_image_path(image.id)}}" alt="">
+					<img ng-src="{{get_image_path(image.id)}}" alt="">
 					<span class="actions">
-						<a en-zoom="{{componentScope['todolist'].get_image_path(image.id)}}"><i class="icon icon-zoom-in"></i></a>
-						<a confirm on-confirm="componentScope['todolist'].remove_image_at($index, todo)"><i class="icon icon-remove"></i></a>
+						<a en-zoom="{{get_image_path(image.id)}}"><i class="icon icon-zoom-in"></i></a>
+						<a confirm on-confirm="remove_image_at($index, todo)"><i class="icon icon-remove"></i></a>
 					</span>
 				</p>
 			</div>
@@ -42,8 +41,8 @@
 
 <form id="newTodoForm">
 	<div class="form-inline">
-		<input style="visibility: hidden;position:absolute;" type="submit" ng-click="componentScope['todolist'].addTodo(componentScope['todolist'].todoContent)" class="pull-right btn">
+		<input style="visibility: hidden;position:absolute;" type="submit" ng-click="addTodo(todoContent)" class="pull-right btn">
 
 	</div>
-	<input type="text" ng-model="componentScope['todolist'].todoContent" class="" placeholder="Type something and press return to submit :)">
+	<input type="text" ng-model="todoContent" class="" placeholder="Type something and press return to submit :)">
 </form>

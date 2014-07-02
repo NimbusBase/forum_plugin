@@ -1,5 +1,6 @@
 define([], ()->
 	{
+		name: 'example'
 		showName: 'Eg'
 		icon: "icon-star"
 		models: [
