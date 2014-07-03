@@ -1,6 +1,5 @@
 define([], ()->
 	{
-		name: 'todolist',
 		# this name is only used in the 'Compose' button dropdown menu
 		showName: 'Todo'
 		# icon in 'Compose' button dropdown menu

@@ -1,7 +1,6 @@
 (function() {
   define([], function() {
     return {
-      name: 'example',
       showName: 'Eg',
       icon: "icon-star",
       models: [

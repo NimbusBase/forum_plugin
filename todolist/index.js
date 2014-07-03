@@ -1,7 +1,6 @@
 (function() {
   define([], function() {
     return {
-      name: 'todolist',
       showName: 'Todo',
       icon: "icon-list",
       models: [
