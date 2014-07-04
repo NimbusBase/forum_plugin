@@ -236,10 +236,4 @@
     };
   });
 
-
-  /*
-  	what's inside the $scope?
-  	displayed_topic: instance of current topic model
-   */
-
 }).call(this);
