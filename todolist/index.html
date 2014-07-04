@@ -3,7 +3,7 @@
 	<li ng-class="{active:show_completed_todo==2}" ng-click="change_todo_display(2)">Completed</li>
 </ul>
 <ul id="todo_list" class="nav nav-tabs nav-stacked">
-	<li ng-repeat="todo in todoList|orderBy:componentScope.todolist.todoOrder:componentScope.todolist.reverseOrder" class="task" ng-show="will_show_todo(todo)">
+	<li ng-repeat="todo in todoList|orderBy:todolist.todoOrder:todolist.reverseOrder" class="task" ng-show="will_show_todo(todo)">
 		<div class="tasks-list-item">
 		    <input type="checkbox" name="task_1" value="1" class="tasks-list-cb" ng-model="todo.status" ng-change="changeStatus(todo)">
 		    <span class="tasks-list-mark" ng-click="toggle(todo)"></span>
